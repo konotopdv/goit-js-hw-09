@@ -18,12 +18,6 @@ const calendar = document.querySelector('#datetime-picker');
 
 startBtn.disabled = true;
 
-Report.info(
-  '👋 Greeting, my Friend!',
-  'Please, choose a date and click on start',
-  'Okay'
-);
-
 const options = {
   enableTime: true,
   time_24hr: true,
@@ -38,19 +32,10 @@ function onChooseDate(day) {
   selectedDate = day.getTime();
   currentDate = Date.now();
   if (selectedDate < currentDate) {
-    Report.failure(
-      '🥺 Ooops...',
-      'Please, choose a date in the future and remember: "Knowledge rests not upon truth alone, but upon error also." - Carl Gustav Jung',
-      'Okay'
-    );
+    Report.failure('Please, choose a date in the future');
   } else {
     startBtn.disabled = false;
     calendar.disabled = true;
-    Report.success(
-      '🥰 Congratulation! Click on start!',
-      '"Do not try to become a person of success but try to become a person of value." <br/><br/>- Albert Einstein',
-      'Okay'
-    );
   }
   return selectedDate;
 }
@@ -83,11 +68,6 @@ class CountdownTimer {
       if (delta <= 1000) {
         this.stop();
         this.updateClockface(this.convertMs(0));
-        Report.info(
-          '👏 Congratulation! Timer stopped!',
-          'Please, if you want to start timer, choose a date and click on start or reload this page',
-          'Okay'
-        );
       }
     }, TIMER_DELAY);
   }
