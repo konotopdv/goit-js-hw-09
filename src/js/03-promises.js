@@ -1,5 +1,5 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-document.body.style.backgroundColor = '#f7eff4';
+document.body.style.backgroundColor = 'black';
 const form = document.querySelector('form.form');
 const options = {
   position: 'center-bottom',
